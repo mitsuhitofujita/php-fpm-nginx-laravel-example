@@ -10,7 +10,7 @@ services:
   php-fpm:
     build: ./services/php-fpm
     environment:
-      DB_USER: php_fpm
+      DB_USERNAME: php_fpm
       DB_PASSWORD: php_fpm
       DB_DATABASE: php_fpm
       DB_HOST: postgres
