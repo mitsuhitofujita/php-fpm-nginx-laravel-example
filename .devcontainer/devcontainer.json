@@ -1,0 +1,28 @@
+{
+	"name": "php-fpm-nginx-laravel-example",
+	"dockerComposeFile": [
+		"compose.yaml"
+	],
+	"service": "php-fpm",
+	"remoteUser": "vscode",
+	"remoteEnv": {
+		"APP_NAME": "php-fpm-nginx-laravel-example",
+		"APP_ENV": "local",
+		"APP_KEY": "base64:GsSOvZ2uoodgjc1l4XfOWdWs+pMRw34I8mfkCZFEwps=",
+		"APP_DEBUG": "true",
+		"APP_URL": "http://localhost"
+	},
+	"workspaceFolder": "/workspace",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"editorconfig.editorconfig",
+				"vue.volar",
+				"bmewburn.vscode-intelephense-client",
+				"cweijan.vscode-database-client2",
+				"redhat.vscode-yaml",
+				"esbenp.prettier-vscode"
+			]
+		}
+	}
+}

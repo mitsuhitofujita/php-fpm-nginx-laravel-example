@@ -1,0 +1,32 @@
+name: pfnle
+services:
+  nginx:
+    build: ./services/nginx
+    ports:
+      - "80:80"
+    volumes:
+      - php-socket:/var/run/php
+      - ../:/workspace:cached
+  php-fpm:
+    build: ./services/php-fpm
+    environment:
+      DB_USER: php_fpm
+      DB_PASSWORD: php_fpm
+      DB_DATABASE: php_fpm
+      DB_HOST: postgres
+    volumes:
+      - ../:/workspace:cached
+      - php-socket:/var/run/php
+  postgres:
+    build: ./services/postgres
+    environment:
+      POSTGRES_PASSWORD: php_fpm
+      POSTGRES_USER: php_fpm
+      POSTGRES_DB: php_fpm
+      POSTGRES_INITDB_ARGS: "--encoding=UTF-8 --locale=C"
+    restart: always
+    shm_size: 128mb
+    volumes:
+      - ./services/postgres/initdb.d:/docker-entrypoint-initdb.d
+volumes:
+  php-socket:
