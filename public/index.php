@@ -8,6 +8,6 @@
 
     </head>
     <body>
-        <p>index.html</p>
+        <p><?php echo "index.php"; ?></p>
     </body>
 </html>

@@ -10,6 +10,10 @@ services:
   php-fpm:
     build: ./services/php-fpm
     environment:
+      APP_NAME: php-fpm-nginx-laravel-example
+      APP_KEY: base64:GsSOvZ2uoodgjc1l4XfOWdWs+pMRw34I8mfkCZFEwps=
+      APP_ENV: local
+      APP_URL: http://localhost
       DB_USERNAME: php_fpm
       DB_PASSWORD: php_fpm
       DB_DATABASE: php_fpm
